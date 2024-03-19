@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: inland-wren-java-quarkus-gitops
+  description: This is GitOps manifest for inland-wren-java-quarkus   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: inland-wren-java-quarkus
+    janus-idp.io/tekton: inland-wren-java-quarkus 
+    backstage.io/kubernetes-id: inland-wren-java-quarkus 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:inland-wren-java-quarkus
